@@ -58,7 +58,7 @@
         }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/2e932fe60ba725e220bd9cc51/a385ffcbfc9cb825c9c5d2bbe.js");</script>
     <style type="text/css">
         body {
-            background-color: #faf8fa;
+            background-color: goldenrod;
         }
         .intro, .main-container {
             background-color: #ffffff;
@@ -259,8 +259,9 @@
                                     <!--/.add-desc-box-->
                                     <div class="col-md-3 text-right price-box">
                                         <h2 class="item-price"> <%= listing.price %> </h2>
-                                        <a href="/add/<%= listing._id %>" class="btn btn-success btn-sm make-favorite">View Ad</a>
+                                        <a href="/add/<%= listing.id %>" class="btn btn-success btn-sm make-favorite">View Ad</a>
                                     </div>
+                                    
                                     
                                     <!--/.add-desc-box-->
                                 </div>
@@ -269,9 +270,6 @@
                         <% }); %>
                         
                         
-
-
-
                     </div>
 
                     <!--sidebar content -->
