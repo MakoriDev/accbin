@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const pool = require('../app.js');
+const pool = require('../database.js');
 
 const dbConfig = {
     host: process.env.MYSQL_HOST,
