@@ -1,212 +1,315 @@
 <!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
 <html lang="en" dir="ltr">
-<head>
-    <script src="https://kit.fontawesome.com/da4c18e391.js" crossorigin="anonymous"></script>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
+    
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="5viRcQeY33fcUQlFbh4m8FnUe5awDg8DnGwlIjIX">
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../images/fav.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../images/fav.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../images/fav.png">
-    <link rel="apple-touch-icon-precomposed" href="../../images/fav.png">
-    <link rel="shortcut icon" href="../../images/fav.png">
-    <title>Accounts Place Kenya</title>
-    <!-- Bootstrap core CSS -->
-    <link href="https://www.accountsplace.co.ke/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="https://www.accountsplace.co.ke/assets/css/style.css" rel="stylesheet">
-    <!-- styles needed for carousel slider -->
-    <link href="https://www.accountsplace.co.ke/assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
-    <link href="https://www.accountsplace.co.ke/assets/plugins/owl-carousel/owl.theme.css" rel="stylesheet">
-    <link href="https://www.accountsplace.co.ke/assets/plugins/bxslider/jquery.bxslider.css" rel="stylesheet"/>
-    <link href="https://www.accountsplace.co.ke/assets/css/custom.css" rel="stylesheet">
-    <!-- Just for debugging purposes. -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- include pace script for automatic web page progress bar  -->
-    <script>
-        paceOptions = {
-            elements: true
-        };
-    </script>
-    <script src="https://www.accountsplace.co.ke/assets/js/pace.min.js"></script>
-    <script src="https://www.accountsplace.co.ke/assets/plugins/modernizr/modernizr-custom.js"></script>
- <!-- Mailchimp marketing script. DO NOT EDIT OR REMOVE. -->
- <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/2e932fe60ba725e220bd9cc51/a385ffcbfc9cb825c9c5d2bbe.js");</script>
-<style type="text/css">
-#myBtn {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: goldenrod; /* Set a golden background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 30px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
-}
-
-#myBtn:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
-}
-
-.form-container {
-  background-color: goldenrod;
-  padding: 20px; /* Adjust the padding as needed */
-  border-radius: 10px; /* Adjust the border-radius as needed */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
-}
-</style>
-<!-- Facebook Pixel Code DO NOT EDIT OR REMOVE -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '552928128830173');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=552928128830173&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7333941459612266"
-     crossorigin="anonymous"></script>
-</head>
+   </head>
 <body>
-
-    <div id="wrapper">
-        <div class="header">
-            <nav class="navbar  fixed-top navbar-site navbar-light bg-light navbar-expand-md"
-                 role="navigation">
-                <div class="container">
-    
-                <div class="navbar-identity">
-                                    <a href="/" class="navbar-brand logo logo-title">
-                    <img class="userImg" src="/images/logo.png" alt="LOGO" style="width:300px; height:61px; border:0px"> </a>
-                    
-                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggler pull-right"
-                            type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30" width="30" height="30" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/></svg>
-                    </button>
-                </div>
-    
-    
-    
-                    <div class="navbar-collapse collapse">
-                       
-                        <ul class="nav navbar-nav ml-auto navbar-right">
-                            <li class="nav-item"><a href="/" class="nav-link"><i class="fa fa-home"></i> Home</a></li>
-                            <li class="nav-item"><a href="/accountmanager" class="nav-link"><i class="fa fa-users"></i> Account Manager</a></li>
-                            <li class="nav-item"><a href="/register" class="nav-link"><i class="fa fa-edit"></i> Register</a></li>
-                                                    
-                            <li class="nav-item"><a href="" class="nav-link"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-                                                    <li class="postadd nav-item"><a class="btn btn-block   btn-border btn-post btn-success nav-link" href="/listing">Post a Listing</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--/.nav-collapse -->
-                </div>
-                <!-- /.container-fluid -->
-            </nav>
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="images/frontImg.jpg" alt="">
+        <div class="text">
+          <span class="text-1">Every new friend is a <br> new adventure</span>
+          <span class="text-2">Let's get connected</span>
         </div>
-        <!-- /.header -->
-            
-        
-             <div class="main-container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 page-content">
-                        <div class="inner-box category-content">
-                            <h2 class="title-2"><i class="fa fa-plus"></i> Create your account, Its free </h2>
-    
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <form class="form-container" method="post" action="/user/register">
-                                        <input type="hidden" name="_token" value="5viRcQeY33fcUQlFbh4m8FnUe5awDg8DnGwlIjIX">                                        <!-- Text input-->
-                                            <div class="form-group  row  required">
-                                                <label class="col-md-4 control-label">Name <sup>*</sup></label>
-    
-                                                <div class="col-md-6">
-                                                    <input id="name" type="text" class="form-control " name="name" value="" required autocomplete="name" autofocus>
-    
-                                                                                                </div>
-                                            </div>
-                                            <div class="form-group  row  required">
-                                                <label for="inputEmail3" class="col-md-4 control-label">E-Mail Address
-                                                    <sup>*</sup></label>
-    
-                                                <div class="col-md-6">
-                                                    <input id="email" type="email" class="form-control " name="email" value="" required autocomplete="email">
-    
-                                                                                                    </div>
-                                            </div>
-                                             <div class="form-group  row  required">
-                                                <label for="inputPhone" class="col-md-4 control-label">Phone Number
-                                                    <sup>*</sup></label>
-    
-                                                <div class="col-md-6">
-                                                    <input id="phone" type="text" class="form-control " name="phone" value="" required>
-                                                    <small id="emailHelp" class="form-text text-muted">Phone number MUST start with "07********" and be 10 characters long.</small>
-                                                                                                    </div>
-                                            </div>
-                                          
-                                             <div class="form-group  row  required">
-                                                <label class="col-md-4 control-label">Username <sup>*</sup></label>
-    
-                                                <div class="col-md-6">
-                                                    <input id="username" type="text" class="form-control " name="username" value="" required autocomplete="name" autofocus>
-                                                        <small id="emailHelp" class="form-text text-muted">This will be used to generate your shop URL.</small>
-                                                                                                </div>
-                                            </div>
-                                            <div class="form-group  row  required">
-                                                <label for="inputPassword3" class="col-md-4 control-label">Password<sup>*</sup> </label>
-    
-                                                <div class="col-md-6">
-                                                    <input id="password" type="password" class="form-control " name="password" required autocomplete="new-password">
-                                                        <small id="emailHelp" class="form-text text-muted">At least 5 characters.</small> 
-                                                                                                        </div>
-                                            </div>
-                                            <div class="form-group  row  required">
-                                                <label for="inputPassword3" class="col-md-4 control-label">Confirm Password<sup>*</sup> </label>
-    
-                                                <div class="col-md-6">
-                                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                                                    
-                                                </div>
-                                            </div>
-                                            <div class="form-group  row ">
-                                                <label class="col-md-2 control-label"></label>
-    
-                                                <div class="col-md-10 text-center">
-                                                    <div class="termbox mb10">
-    
-                                                        <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                                                            <span class="custom-control-description"> By clicking on register, you have read and agree to the <a href="#" target="_blank">Terms
-                                                            & Conditions</a> </span>
-                                                        </label>
-    
-    
-                                                    </div>
-                                                    <div style="clear:both"></div>
-                                                    <input type="submit" value="Register" class="btn btn-primary" name="submitBtn" onclick="this.disabled=true;this.form.submit();">
-                                                </div>
-                                            </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
+      </div>
+      <div class="back">
+        <img class="backImg" src="images/backImg.jpg" alt="">
+        <div class="text">
+          <span class="text-1">Complete miles of journey <br> with one step</span>
+          <span class="text-2">Let's get started</span>
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+      <div class="form-content">
+          <div class="signup-form">
+              <div class="title">Create Your Account</div>
+              <form action="/user/register" method="post">
+                  <input type="hidden" name="_token" value="5viRcQeY33fcUQlFbh4m8FnUe5awDg8DnGwlIjIX">
+  
+                  <div class="input-boxes">
+                      <!-- Name Field -->
+                      <div class="input-box">
+                          <i class="fas fa-user"></i>
+                          <input id="name" type="text" placeholder="Enter your name" name="name" required autocomplete="name" autofocus>
+                      </div>
+  
+                      <!-- Email Field -->
+                      <div class="input-box">
+                          <i class="fas fa-envelope"></i>
+                          <input id="email" type="email" placeholder="Enter your email" name="email" required autocomplete="email">
+                      </div>
+  
+                      <!-- Phone Number Field -->
+                      <div class="input-box">
+                          <i class="fas fa-phone"></i>
+                          <input id="phone" type="text" placeholder="Enter your phone number" name="phone" required>
+                      </div>
+  
+                      <!-- Username Field -->
+                      <div class="input-box">
+                          <i class="fas fa-user-circle"></i>
+                          <input id="username" type="text" placeholder="Choose a username" name="username" required autocomplete="username">
+                      </div>
+  
+                      <!-- Password Field -->
+                      <div class="input-box">
+                          <i class="fas fa-lock"></i>
+                          <input id="password" type="password" placeholder="Enter your password" name="password" required autocomplete="new-password">
+                      </div>
+  
+                      <!-- Confirm Password Field -->
+                      <div class="input-box">
+                          <i class="fas fa-lock"></i>
+                          <input id="password-confirm" type="password" placeholder="Confirm your password" name="password_confirmation" required>
+                      </div>
+  
+                      <!-- Terms and Conditions -->
+                      <div class="text">
+                          <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+                              <input type="checkbox" class="custom-control-input">
+                              <span class="custom-control-description">By clicking on register, you agree to the <a href="#" target="_blank">Terms & Conditions</a></span>
+                          </label>
+                      </div>
+  
+                      <!-- Submit Button -->
+                      <div class="button input-box">
+                          <input type="submit" value="Register">
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  
+  </div>
+</body>
+
+<style>
+  /* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #7d2ae8;
+  padding: 30px;
+}
+.container{
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  background: #fff;
+  padding: 40px 30px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  perspective: 2700px;
+}
+.container .cover{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  z-index: 98;
+  transition: all 1s ease;
+  transform-origin: left;
+  transform-style: preserve-3d;
+}
+.container #flip:checked ~ .cover{
+  transform: rotateY(-180deg);
+}
+ .container .cover .front,
+ .container .cover .back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.cover .back{
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.container .cover::before,
+.container .cover::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #7d2ae8;
+  opacity: 0.5;
+  z-index: 12;
+}
+.container .cover::after{
+  opacity: 0.3;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.container .cover img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
+.container .cover .text{
+  position: absolute;
+  z-index: 130;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cover .text .text-1,
+.cover .text .text-2{
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+.cover .text .text-2{
+  font-size: 15px;
+  font-weight: 500;
+}
+.container .forms{
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+.container .form-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-content .login-form,
+.form-content .signup-form{
+  width: calc(100% / 2 - 25px);
+}
+.forms .form-content .title{
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+.forms .form-content .title:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 25px;
+  background: #7d2ae8;
+}
+.forms .signup-form  .title:before{
+  width: 20px;
+}
+.forms .form-content .input-boxes{
+  margin-top: 30px;
+}
+.forms .form-content .input-box{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+}
+.form-content .input-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.form-content .input-box input:focus,
+.form-content .input-box input:valid{
+  border-color: #7d2ae8;
+}
+.form-content .input-box i{
+  position: absolute;
+  color: #7d2ae8;
+  font-size: 17px;
+}
+.forms .form-content .text{
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+.forms .form-content .text a{
+  text-decoration: none;
+}
+.forms .form-content .text a:hover{
+  text-decoration: underline;
+}
+.forms .form-content .button{
+  color: #fff;
+  margin-top: 40px;
+}
+.forms .form-content .button input{
+  color: #fff;
+  background: #7d2ae8;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.forms .form-content .button input:hover{
+  background: #5b13b9;
+}
+.forms .form-content label{
+  color: #5b13b9;
+  cursor: pointer;
+}
+.forms .form-content label:hover{
+  text-decoration: underline;
+}
+.forms .form-content .login-text,
+.forms .form-content .sign-up-text{
+  text-align: center;
+  margin-top: 25px;
+}
+.container #flip{
+  display: none;
+}
+@media (max-width: 730px) {
+  .container .cover{
+    display: none;
+  }
+  .form-content .login-form,
+  .form-content .signup-form{
+    width: 100%;
+  }
+  .form-content .signup-form{
+    display: none;
+  }
+  .container #flip:checked ~ .forms .signup-form{
+    display: block;
+  }
+  .container #flip:checked ~ .forms .login-form{
+    display: none;
+  }
+}
+
+</style>
+</html>
