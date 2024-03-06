@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
 const bodyParser = require('body-parser');
 const path = require('path');
 const crypto = require('crypto');
@@ -14,17 +15,28 @@ const PORT = process.env.PORT || 3001;
 
 console.log('Connecting to MySQL...');
 
-// Dummy database connection (Replace with your own database logic)
+// MySQL database connection
 const pool = require('./database'); 
 
+// Generate a secret key for the session
 const secretKey = crypto.randomBytes(32).toString('hex');
 
-// Session middleware setup
+
+
+// Configure MySQL session store
+const sessionStore = new MySQLStore({}, pool);
+
+// Session middleware setup with MySQL store
 app.use(session({
+  key: 'secure session',
   secret: secretKey,
+  store: sessionStore,
   resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false }  // Set to true if using HTTPS
+  saveUninitialized: false,
+  cookie: { 
+    secure: true, // Set to true as the application is served over HTTPS
+    httpOnly: true // Recommended to set httpOnly to true for added security
+  }
 }));
 
 // Set EJS as the view engine
@@ -34,7 +46,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
+// Define routes
 const indexRoutes = require('./routes/indexRoutes');
 const userRoutes = require('./routes/userRoutes');
 const listingRoutes = require('./routes/listingRoutes');
@@ -43,13 +55,13 @@ app.use('/', indexRoutes);
 app.use('/user', userRoutes);
 app.use('/listing', listingRoutes);
 
-// Example route to demonstrate error handling
+// Example route for error handling demonstration
 app.get('/demo-error', (req, res) => {
-    const errorMessage = "This is a demo error message!";
-    res.render('your-ejs-file', { error: errorMessage });
+  const errorMessage = "This is a demo error message!";
+  res.render('your-ejs-file', { error: errorMessage });
 });
 
-// Start server
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

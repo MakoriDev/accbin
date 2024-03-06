@@ -14,7 +14,7 @@ html:not([theme="dark"]) {
 }
 
 html[theme="dark"] {
-    --text-color: #fff;
+    --text-color:white;
     --text-color-meta: #AAA;
     --text-color-meta-dark: #717171;
     --text-color-darker: #222;
@@ -332,14 +332,10 @@ body {
     font-weight: normal;
     line-height: 1.5;
     color: #292b2c;
-    background-color: #EEE
+    background-color: red;
 }
 
-@media (max-width: 767px) {
-    body {
-        font-size: 0.75rem
-    }
-}
+
 
 [tabindex="-1"]:focus {
     outline: none !important
@@ -22422,6 +22418,32 @@ body {
    
 }
 
+
+
+@media (max-width: 768px) {
+    .sidebar-content {
+        flex-basis: 150px; /* Smaller width for sidebar */
+        /* Adjust content sizes as necessary */
+        background-color: orangered;
+    }
+}
+
+
+.sidebar-content iframe {
+    max-width: 100%;
+    height: auto;
+    /* Any additional styles to ensure responsiveness */
+}
+
+.intro {
+    background-image: url('images/dark.jpg'); /* Update with your image path */
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 100%; /* Adjust as needed */
+    height: 100%; /* Adjust as needed */
+    display: block;
+}
 
 
 
