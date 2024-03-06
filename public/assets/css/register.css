@@ -214,3 +214,83 @@ body{
     display: none;
   }
 }
+
+
+
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  /* This ensures that there are no default margins or paddings */
+}
+
+.header {
+  position: fixed; /* Fixed position to keep it at the top on scrolling */
+  top: 0; /* Align the header at the top of the page */
+  left: 0; /* Align the header to the left */
+  width: 100%; /* Full width */
+  background-color: #5d54a4; /* Example purple color matching the theme */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Modern shadow for "popping out" effect */
+  z-index: 1000; /* Ensures the header is above other content */
+  height: 6pc;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Centers items vertically */
+  padding: 10px 20px; /* Padding for the header content */
+}
+
+.header-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4c42f8; /* Example button color */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transition for smooth color change */
+}
+
+.header-btn:hover {
+  background-color: #3730a3; /* Color for hover effect */
+}
+
+/* Other necessary styles... */
+.nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: space-around;
+  
+}
+
+
+.nav-link {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link:focus {
+  text-decoration: none;
+  background-color: #e9ecef;
+  border-radius: 5px;
+}
+
+.btn-post {
+  text-decoration: none;
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.btn-post:hover {
+  background-color: #218838;
+}

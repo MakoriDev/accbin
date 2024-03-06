@@ -18,6 +18,21 @@ class User {
         return users[0];
     }
 
+    // In User.js
+
+
+    async userExists(username, email) {
+        const [users] = await this.pool.execute(
+            'SELECT * FROM users WHERE username = ? OR email = ?',
+            [username, email]
+        );
+        return users.length > 0;
+    }
+
+
+
+
+
     // Additional methods for other operations (e.g., update, delete, findByUsername, etc.)
     // Implement these methods similar to the ones above, using the connection pool for database operations.
 }

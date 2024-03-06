@@ -4,9 +4,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const crypto = require('crypto');
 
-
-const secretKey = crypto.randomBytes(32).toString('hex');
-
 // Load environment variables from .env file
 require('dotenv').config();
 
@@ -17,9 +14,12 @@ const PORT = process.env.PORT || 3001;
 
 console.log('Connecting to MySQL...');
 
-const pool = require('./database');
+// Dummy database connection (Replace with your own database logic)
+const pool = require('./database'); 
 
-// Session middleware setup (if needed)
+const secretKey = crypto.randomBytes(32).toString('hex');
+
+// Session middleware setup
 app.use(session({
   secret: secretKey,
   resave: false,
@@ -30,7 +30,7 @@ app.use(session({
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 
-// Middleware
+// Middleware for parsing request body and serving static files
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -43,9 +43,15 @@ app.use('/', indexRoutes);
 app.use('/user', userRoutes);
 app.use('/listing', listingRoutes);
 
+// Example route to demonstrate error handling
+app.get('/demo-error', (req, res) => {
+    const errorMessage = "This is a demo error message!";
+    res.render('your-ejs-file', { error: errorMessage });
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-
+module.exports = app;
