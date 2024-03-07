@@ -300,3 +300,15 @@ body, html {
       font-size: 0.75rem
   }
 }
+
+
+@media only screen and (max-width: 480px) {
+  .input-box {
+      width: auto; /* Or specify a percentage width */
+      margin: 10px 0; /* Give some space top and bottom */
+  }
+  .input-box input {
+      width: 90%; /* Slightly less than full width to account for padding/margins */
+  }
+}
+
