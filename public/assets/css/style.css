@@ -22448,5 +22448,38 @@ body {
 
 
 
+.flex-container {
+    display: flex;
+    align-items: center; /* This centers the content vertically */
+    height: 100%;
+}
+
+.image-container {
+    flex: 0 0 25%; /* This gives the image container a fixed size of 25% of the parent container */
+    max-width: 25%; /* Maximum width of image container */
+    height: 100%;
+    padding-left: 6px;
+}
+
+.image-container img {
+
+    width: calc(100% - 10px); /* This makes the image responsive */
+    height: 100%;
+    object-fit: cover;
+}
+
+.content-container {
+    flex-grow: 1; /* This allows the content container to take the remaining space */
+}
 
 
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .image-container {
+        width: 100%;
+        max-width: 100%;
+    }
+}

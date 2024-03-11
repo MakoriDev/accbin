@@ -34,7 +34,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: { 
-    secure: true, // Set to true as the application is served over HTTPS
+    secure: process.env.NODE_ENV === 'production', // Set to true as the application is served over HTTPS
     httpOnly: true // Recommended to set httpOnly to true for added security
   }
 }));

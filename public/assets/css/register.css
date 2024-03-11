@@ -308,7 +308,7 @@ body, html {
       margin: 10px 0; /* Give some space top and bottom */
   }
   .input-box input {
-      width: 90%; /* Slightly less than full width to account for padding/margins */
+      width: 90vw; /* Slightly less than full width to account for padding/margins */
   }
 }
 
