@@ -14,7 +14,7 @@ html:not([theme="dark"]) {
 }
 
 html[theme="dark"] {
-    --text-color:white;
+    --text-color: white;
     --text-color-meta: #AAA;
     --text-color-meta-dark: #717171;
     --text-color-darker: #222;
@@ -810,7 +810,11 @@ button {
 }
 
 .dtable {
-    display: table
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure the parent has a defined height */
+    width: 100%;
 }
 
 .dtable-cell {
@@ -2420,7 +2424,7 @@ label {
 
 .intro h1,
 .intro-title {
-    color: #fff;
+    color: black;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 2.5rem;
     line-height: normal;
@@ -8519,6 +8523,7 @@ img {
 
 .text-center {
     text-align: center
+    
 }
 
 .text-right {
@@ -22455,17 +22460,24 @@ body {
 }
 
 .image-container {
-    flex: 0 0 25%; /* This gives the image container a fixed size of 25% of the parent container */
-    max-width: 25%; /* Maximum width of image container */
-    height: 100%;
+    flex: 1; 
+    max-width: 100%; /* Maximum width of image container */
+    height: auto;
     padding-left: 6px;
 }
 
 .image-container img {
 
     width: calc(100% - 10px); /* This makes the image responsive */
-    height: 100%;
+    height: auto;
     object-fit: cover;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+
+}
+
+.image-container  img {
+    transform: scale(0.9);
 }
 
 .content-container {

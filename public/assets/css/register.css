@@ -295,20 +295,68 @@ body, html {
   background-color: #218838;
 }
 
-@media (max-width: 767px) {
-  body {
-      font-size: 0.75rem
+
+@media (max-width: 730px) {
+  .container
+  
+  .cover {
+    color: #218838;
+      /* If the cover is not essential on smaller screens, keep it hidden */
+      /* display: none; */
+  }
+
+  .form-content .login-form,
+  .form-content .signup-form {
+      width: 100%; /* Full width for smaller screens */
+  }
+
+  .container .forms {
+      display: block; /* Ensure forms are displayed */
   }
 }
-
 
 @media only screen and (max-width: 480px) {
   .input-box {
-      width: auto; /* Or specify a percentage width */
-      margin: 10px 0; /* Give some space top and bottom */
+      width: 100%; /* Full width for input boxes on very small screens */
   }
+
   .input-box input {
-      width: 90vw; /* Slightly less than full width to account for padding/margins */
+      width: calc(100% - 60px); /* Adjust the width of input fields */
+      /* Ensure padding is accounted for in the calculation */
   }
 }
 
+@media screen and (max-width: 768px) {
+  .header {
+      padding: 5px; /* Adjust padding for smaller headers */
+  }
+
+  .container .cover .front,
+  .container .cover .back {
+      width: 100%;
+      height: auto; /* Ensure cover images are responsive */
+  }
+
+  .form-content {
+      flex-direction: column; /* Stack form elements vertically */
+      align-items: center; /* Center align the form elements */
+  }
+
+  .input-box {
+      width: 100%; /* Full width for input boxes */
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .navbar, .signup-form, .input-box, .button {
+      width: 100%;
+      padding: 0;
+  }
+
+  .signup-form .title, .input-boxes, .input-box {
+      font-size: smaller;
+  }
+
+  /* Adjust other elements as needed */
+}
