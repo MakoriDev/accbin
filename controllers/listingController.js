@@ -13,14 +13,22 @@ const listingModel = new Listing();
 
 // Controller function to handle displaying the form for creating a new listing
 exports.displayListingForm = (req, res) => {
-    res.render('listing-form'); // Render the form for creating a new listing
+    if (!req.session.userId) {
+        return res.redirect('/login'); // Redirect to login page
+    }
+    res.render('listing-form');
 };
+
 
 // Controller function to handle creating a new listing
 exports.createListing = async (req, res) => {
     try {
+        if (!req.session.userId) {
+            return res.status(401).send('Unauthorized - Please login to create a listing');
+        }
         // Create a new listing using the form data
         const listingData = {
+            userId: req.session.userId,
             category: req.body.category,
             title: req.body.title,
             description: req.body.description,
