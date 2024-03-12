@@ -60,4 +60,37 @@ router.get('/add/:id', isAuthenticated, async (req, res) => {
     }
 });
 
+// ... [previous code]
+
+// Route for handling search
+router.get('/search', isAuthenticated, async (req, res) => {
+    try {
+        const searchTerm = req.query.q;
+        console.log('Search Term:', searchTerm);  // Log the search term
+
+        if (!searchTerm) {
+            res.json([]); // Return an empty array if no search term is provided
+            return;
+        }
+
+        const listings = await Listing.find({
+            $or: [
+                { title: { $regex: searchTerm, $options: 'i' } },
+                { description: { $regex: searchTerm, $options: 'i' } }
+            ]
+        });
+
+        console.log('Search Results:', listings);  // Log the search results
+
+        res.json(listings); // Send the search results as JSON
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
+// ... [remaining code]
+
+
+
 module.exports = router;

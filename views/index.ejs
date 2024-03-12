@@ -284,5 +284,45 @@
 
     </div>
 </body>
+<!-- Add this script in your index.html or a separate JS file included in your index.html -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.querySelector('.keyword');
+        if (searchInput) {
+            searchInput.addEventListener('keyup', function() {
+                const searchTerm = this.value;
+                console.log('Searching for:', searchTerm); // Debug log
+                fetch(`/search?q=${encodeURIComponent(searchTerm)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Search results:', data); // Debug log
+                        updateListings(data);
+                    })
+                    .catch(error => console.error('Error:', error));
+            });
+        } else {
+            console.error('Search input not found');
+        }
+    });
+
+    function updateListings(listings) {
+        const container = document.querySelector('.col-md-9.page-content.col-thin-right');
+        container.innerHTML = ''; // Clear existing listings
+        console.log('Updating listings...'); // Debug log
+
+        if (listings.length === 0) {
+            container.innerHTML = '<p>No listings found.</p>';
+            return;
+        }
+
+        listings.forEach(listing => {
+            const listingDiv = document.createElement('div');
+            listingDiv.className = 'item-list';
+            listingDiv.innerHTML = `...`; // your listing template
+            container.appendChild(listingDiv);
+        });
+    }
+</script>
+
 
 </html>

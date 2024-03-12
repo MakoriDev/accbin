@@ -27,9 +27,10 @@ const secretKey = crypto.randomBytes(32).toString('hex');
 const sessionStore = new MySQLStore({}, pool);
 
 // Session middleware setup with MySQL store
+// Session middleware setup with MySQL store
 app.use(session({
   key: 'secure session',
-  secret: secretKey,
+  secret: process.env.SESSION_SECRET || 'default_secret_key', // Use the environment variable
   store: sessionStore,
   resave: false,
   saveUninitialized: false,
@@ -38,6 +39,7 @@ app.use(session({
     httpOnly: true // Recommended to set httpOnly to true for added security
   }
 }));
+
 
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
