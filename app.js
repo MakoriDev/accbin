@@ -19,7 +19,7 @@ console.log('Connecting to MySQL...');
 const pool = require('./database'); 
 
 // Generate a secret key for the session
-const secretKey = crypto.randomBytes(32).toString('hex');
+// const secretKey = crypto.randomBytes(32).toString('hex');
 
 
 
