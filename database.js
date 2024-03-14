@@ -12,15 +12,3 @@ const pool = mysql.createPool({
 module.exports = pool;
 
 
-/*gywliodk_accountsplace	
-
-MYSQL_PASSWORD	yustohome2023	
-
-MYSQL_PORT	3307	
-
-MYSQL_USER	gywliodk_yusto	
-
-PORT	80	
-
-SERVER	127.0.0.1
-*/

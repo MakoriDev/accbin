@@ -66,66 +66,64 @@
           <div class="signup-form">
               <div class="title">Create Your Account</div>
               <form action="/user/register" method="post">
-                  <input type="hidden" name="_token" value="5viRcQeY33fcUQlFbh4m8FnUe5awDg8DnGwlIjIX">
-  
-                  <div class="input-boxes">
-                      <!-- Name Field -->
-                      <div class="input-box">
-                          <i class="fas fa-user"></i>
-                          <input id="name" type="text" placeholder="Enter your name" name="name" required autocomplete="name" autofocus>
-                      </div>
-  
-                      <!-- Email Field -->
-                      <div class="input-box">
-                          <i class="fas fa-envelope"></i>
-                          <input id="email" type="email" placeholder="Enter your email" name="email" required autocomplete="email">
-                      </div>
-  
-                      <!-- Phone Number Field -->
-                      <div class="input-box">
-                          <i class="fas fa-phone"></i>
-                          <input id="phone" type="text" placeholder="Enter your phone number" name="phone" required>
-                      </div>
-  
-                      <!-- Username Field -->
-                      <div class="input-box">
-                          <i class="fas fa-user-circle"></i>
-                          <input id="username" type="text" placeholder="Choose a username" name="username" required autocomplete="username">
-                      </div>
-  
-                      <!-- Password Field -->
-                      <div class="input-box">
-                          <i class="fas fa-lock"></i>
-                          <input id="password" type="password" placeholder="Enter your password" name="password" required autocomplete="new-password">
-                      </div>
-  
-                      <!-- Confirm Password Field -->
-                      <div class="input-box">
-                          <i class="fas fa-lock"></i>
-                          <input id="password-confirm" type="password" placeholder="Confirm your password" name="password_confirmation" required>
-                      </div>
-  
-                      <!-- Terms and Conditions -->
-                      <div class="text">
-                          <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                              <input type="checkbox" class="custom-control-input">
-                              <span class="custom-control-description">By clicking on register, you agree to the <a href="#" target="_blank">Terms & Conditions</a></span>
-                          </label>
-                      </div>
-  
-                      <!-- Submit Button -->
-                      <div class="button input-box">
-                          <input type="submit" value="Register">
-                      </div>
-                  </div>
 
-                  <% if (typeof error !== 'undefined' && error) { %>
-                    <p class="error-message"><%= error %></p>
-                <% } %>
-                
-                <!-- Registration Form -->
-                
-              </form>
+                <div class="input-boxes">
+                    <!-- Name Field -->
+                    <div class="input-box">
+                        <i class="fas fa-user"></i>
+                        <input id="name" type="text" placeholder="Enter your name" name="name" required autocomplete="name" autofocus>
+                    </div>
+            
+                    <!-- Email Field -->
+                    <div class="input-box">
+                        <i class="fas fa-envelope"></i>
+                        <input id="email" type="email" placeholder="Enter your email" name="email" required autocomplete="email">
+                    </div>
+            
+                    <!-- Phone Number Field -->
+                    <div class="input-box">
+                        <i class="fas fa-phone"></i>
+                        <input id="phone" type="text" placeholder="Enter your phone number" name="phone" required>
+                    </div>
+            
+                    <!-- Username Field -->
+                    <div class="input-box">
+                        <i class="fas fa-user-circle"></i>
+                        <input id="username" type="text" placeholder="Choose a username" name="username" required autocomplete="username">
+                    </div>
+            
+                    <!-- Password Field -->
+                    <div class="input-box">
+                        <i class="fas fa-lock"></i>
+                        <input id="password" type="password" placeholder="Enter your password" name="password" required autocomplete="new-password">
+                    </div>
+            
+                    <!-- Confirm Password Field -->
+                    <div class="input-box">
+                        <i class="fas fa-lock"></i>
+                        <input id="password-confirm" type="password" placeholder="Confirm your password" name="password_confirmation" required>
+                    </div>
+            
+                    <!-- Terms and Conditions -->
+                    <div class="text">
+                        <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+                            <input type="checkbox" class="custom-control-input" required>
+                            <span class="custom-control-description">By clicking on register, you agree to the <a href="#" target="_blank">Terms & Conditions</a></span>
+                        </label>
+                    </div>
+            
+                    <!-- Error Message -->
+                    <% if (typeof error !== 'undefined' && error) { %>
+                        <p class="error-message"><%= error %></p>
+                    <% } %>
+            
+                    <!-- Submit Button -->
+                    <div class="button input-box">
+                        <input type="submit" value="Register">
+                    </div>
+                </div>
+            </form>
+            
           </div>
       </div>
   </div>

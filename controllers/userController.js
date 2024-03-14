@@ -1,9 +1,48 @@
+const bcrypt = require('bcrypt');
 const User = require('../models/user');
 const pool = require('../database.js');
+
 
 const userModel = new User(pool);
 
 const UserController = {
+    // login 
+    
+
+
+    login: async (req, res) => {
+        try {
+            const { email, password } = req.body;
+            const [users] = await userModel.pool.execute('SELECT * FROM users WHERE email = ?', [email]);
+
+            if (users.length === 0) {
+                return res.status(401).render('login', {
+                    error: 'Invalid email or password',
+                    formData: req.body
+                });
+            }
+
+            const user = users[0];
+            const passwordIsValid = await bcrypt.compare(password, user.password);
+
+            if (!passwordIsValid) {
+                return res.status(401).render('login', {
+                    error: 'Invalid email or password',
+                    formData: req.body
+                });
+            }
+
+            req.session.userId = user.id;
+            console.log("User ID set in session:", req.session.userId);
+            res.redirect('/user/profile');
+        } catch (error) {
+            console.error("Login Error:", error);
+            res.status(500).send('Internal Server Error');
+        }
+    },
+
+    // register 
+
     register: async (req, res) => {
         try {
             const userExists = await userModel.userExists(req.body.username, req.body.email);
@@ -50,5 +89,6 @@ const UserController = {
         }
     },
 };
+
 
 module.exports = UserController;

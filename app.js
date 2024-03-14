@@ -29,6 +29,8 @@ const sessionStore = new MySQLStore({
     expiration: 86400000, // Session expiration in milliseconds (24 hours)
 }, pool);
 
+
+
 // Session middleware setup with MySQL store
 app.use(session({
     key: 'secure-session',
@@ -43,6 +45,8 @@ app.use(session({
     },
 }));
 
+
+
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 
@@ -54,6 +58,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 const indexRoutes = require('./routes/indexRoutes');
 const userRoutes = require('./routes/userRoutes');
 const listingRoutes = require('./routes/listingRoutes');
+
+
+
+
+
 
 app.use('/', indexRoutes);
 app.use('/user', userRoutes);
